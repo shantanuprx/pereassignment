@@ -1,0 +1,13 @@
+package com.assignment.orderservice.adapters;
+
+import com.assignment.orderservice.dto.OrdersDto;
+import com.assignment.orderservice.entity.Orders;
+
+public class OrdersAdapter {
+
+	public static OrdersDto convertEntityToModel(Orders productEntity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

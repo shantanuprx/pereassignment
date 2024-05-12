@@ -1,0 +1,2 @@
+spring.application.name=catalogservice
+server.servlet.context-path=catalog

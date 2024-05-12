@@ -1,0 +1,61 @@
+package com.assignment.productservice.controller;
+
+import java.math.BigInteger;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.assignment.productservice.dto.ProductDto;
+import com.assignment.productservice.service.ProductDetailsService;
+import com.assignment.productservice.service.ProductOperationService;
+import com.assignment.productservice.service.SearchServiceImpl;
+
+import jakarta.validation.Valid;
+
+@RestController
+@Validated
+public class AppController<T> {
+
+	
+	@Autowired
+	private SearchServiceImpl<T> searchService;
+	
+	@Autowired
+	private ProductOperationService productOperationService;
+	
+	@Autowired
+	private ProductDetailsService<T> productDetailsService;
+	
+	@GetMapping("/search")
+	public T searchProducts(@RequestParam String query) {
+		return searchService.searchProducts(query);
+	}
+	
+	@GetMapping("/fetch")
+	public T getDetaislsOfProduct(@RequestParam BigInteger productId) {
+		return productDetailsService.getDetails(productId);
+	}
+	
+	@PostMapping("/add")
+	public T addProduct(@Valid @RequestBody ProductDto request,  @RequestHeader String loggedInUser) {
+		return null;
+	}
+	
+	@PutMapping("/update")
+	public T updateProduct(@Valid @RequestBody ProductDto request, @RequestHeader String loggedInUser) {
+		return null;
+	}
+	
+	@DeleteMapping("/delete")
+	public T deleteProduct(@RequestParam BigInteger productId, @RequestHeader String loggedInUser) {
+		return null;
+	}
+}

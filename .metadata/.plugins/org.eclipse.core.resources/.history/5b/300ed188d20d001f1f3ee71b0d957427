@@ -1,0 +1,5 @@
+package com.assignment.catalogservice.repository;
+
+public class ProductCatalogRepository {
+
+}

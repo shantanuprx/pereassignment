@@ -1,0 +1,5 @@
+package com.assignment.gatewayservice.repository;
+
+public class UserRepository {
+
+}

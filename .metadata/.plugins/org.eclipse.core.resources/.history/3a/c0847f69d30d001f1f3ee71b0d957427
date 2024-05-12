@@ -1,0 +1,35 @@
+package com.assignment.catalogservice.controller;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class AppController<T> {
+	
+	@GetMapping("/fetch")
+	public ResponseEntity<T> getDetails(@RequestBody Map<String, Object> requestBody, @PathVariable String service) {
+		return serviceLocator.locateServiceBean(service).getDetails(requestBody);
+	}
+	@PostMapping("/add")
+	public ResponseEntity<T> addDetails(@RequestBody Map<String, Object> requestBody, @PathVariable String service) {
+		return serviceLocator.locateServiceBean(service).addDetails(requestBody);	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<T> updateDetails(@RequestBody Map<String, Object> requestBody, @PathVariable String service) {
+		return serviceLocator.locateServiceBean(service).updateDetails(requestBody);	}
+	
+	@DeleteMapping("/delete")
+	public ResponseEntity<T> deleteDetails(@RequestBody Map<String, Object> requestBody, @PathVariable String service) {
+		return serviceLocator.locateServiceBean(service).deleteDetails(requestBody);	}
+}
+

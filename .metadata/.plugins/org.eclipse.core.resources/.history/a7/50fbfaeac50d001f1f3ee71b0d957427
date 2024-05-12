@@ -1,0 +1,14 @@
+package com.assignment.productservice.service;
+
+import java.math.BigInteger;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProductDetailsService<T> {
+
+	public ResponseEntity<T> getDetails(BigInteger productId) {
+		return null;
+	}
+}

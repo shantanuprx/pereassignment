@@ -1,0 +1,25 @@
+package com.assignment.userservice.dto;
+
+import java.sql.Timestamp;
+import java.util.Date;
+
+public class CardDetailsDto {
+
+	private int recordId;
+	
+    private int user;
+
+    private String cardNumber;
+
+    private Date expiryDate;
+
+    private String cardHolderName;
+
+    private Timestamp createdDate;
+
+    private String createdBy;
+
+    private Timestamp updatedDate;
+
+    private String updatedBy;
+}

@@ -1,0 +1,16 @@
+package com.assignment.gatewayservice.util;
+
+import java.security.MessageDigest;
+
+import com.assignment.gatewayservice.constants.GatewayServiceConstants;
+
+public class HashUtil {
+
+	public String generateMd5Hash(String password) {
+		 MessageDigest md = MessageDigest.getInstance(GatewayServiceConstants.MD5);
+		    md.update(password.getBytes());
+		    byte[] digest = md.digest();
+		    String md5hash = DatatypeConverter.printHexBinary(digest).toUpperCase();
+		 return md5hash;
+	}
+}

@@ -1,0 +1,6 @@
+package com.assignment.orderservice.dto;
+
+public class OrderListDto {
+
+	
+}

@@ -1,0 +1,36 @@
+package com.assignment.userservice.service;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service("card")
+public class CardDetailService<T> extends PaymentOperationService<T>{
+
+	@Override
+	public ResponseEntity<T> getDetails(Map<String, Object> requestData) {
+		// TODO Auto-generated method stub
+		return super.getDetails(requestData);
+	}
+
+	@Override
+	public ResponseEntity<T> addDetails(Map<String, Object> requestData) {
+		// TODO Auto-generated method stub
+		return super.addDetails(requestData);
+	}
+
+	@Override
+	public ResponseEntity<T> updateDetails(Map<String, Object> requestData) {
+		// TODO Auto-generated method stub
+		return super.updateDetails(requestData);
+	}
+
+	@Override
+	public ResponseEntity<T> deleteDetails(Map<String, Object> requestData) {
+		// TODO Auto-generated method stub
+		return super.deleteDetails(requestData);
+	}
+
+	
+}

@@ -1,0 +1,5 @@
+package com.assignment.gatewayservice.feignclients;
+
+public interface ProductServiceFeignClient {
+
+}

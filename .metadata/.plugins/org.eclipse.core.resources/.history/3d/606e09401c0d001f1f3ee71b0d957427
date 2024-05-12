@@ -1,0 +1,5 @@
+package com.assignment.productservice.util;
+
+public class ResponseUtil {
+
+}

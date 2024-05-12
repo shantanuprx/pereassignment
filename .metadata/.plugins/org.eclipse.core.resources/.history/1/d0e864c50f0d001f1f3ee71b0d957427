@@ -1,0 +1,9 @@
+package com.assignment.productservice.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProductOperationService {
+
+	
+}

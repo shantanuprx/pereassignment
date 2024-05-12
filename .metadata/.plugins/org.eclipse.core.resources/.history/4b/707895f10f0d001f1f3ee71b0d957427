@@ -1,0 +1,16 @@
+package com.assignment.productservice.service;
+
+import org.springframework.stereotype.Service;
+
+import com.assignment.productservice.dto.ProductDto;
+
+@Service
+public class ProductOperationService<T> {
+
+	public T addProduct(ProductDto request, String loggedInUser) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

@@ -1,0 +1,12 @@
+package com.assignment.productservice.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class SearchServiceImpl<T> {
+
+	public T searchProducts(String searchQuery){
+		
+		return null;
+	}
+}

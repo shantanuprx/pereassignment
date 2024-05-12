@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Downloads"/>
+			<item value="D:\E-Commerce_Assignment\gatewayservice\gatewayservice"/>
+			<item value="D:\E-Commerce_Assignment\gatewayservice"/>
+			<item value="D:\E-Commerce_Assignment\configurationserver\configurationserver"/>
+			<item value="D:\E-Commerce_Assignment\discoveryservice\discoveryservice"/>
+			<item value="D:\E-Commerce_Assignment\catalogservice\catalogservice"/>
+			<item value="D:\E-Commerce_Assignment\userservice"/>
+			<item value="D:\E-Commerce_Assignment\orderservice\orderservice"/>
+			<item value="D:\E-Commerce_Assignment\hibernate-tools-main\hibernate-tools-main\maven"/>
+			<item value="D:\E-Commerce_Assignment\productservice"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\E-Commerce_Assignment\hibernate-tools-main\hibernate-tools-main\maven\target\generated-sources"/>
+			<item value="D:\E-Commerce_Assignment\productservice\productservice\src\main\java\com\assignment\productservice\entity\Products.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.hibernatetool"/>
+		</list>
+		<list key="name">
+			<item value="entitybulilder"/>
+			<item value="entitygeneration"/>
+		</list>
+		<list key="artifactId">
+			<item value="entitybulilder"/>
+			<item value="entitygeneration"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

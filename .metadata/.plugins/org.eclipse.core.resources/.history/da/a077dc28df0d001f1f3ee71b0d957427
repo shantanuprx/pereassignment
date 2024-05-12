@@ -1,0 +1,64 @@
+package com.assignment.catalogservice.service;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.assignment.catalogservice.dto.ProductCatalogDto;
+import com.assignment.catalogservice.dto.ProductCatalogDtoList;
+import com.assignment.catalogservice.entity.ProductCatalog;
+import com.assignment.catalogservice.repository.ProductCatalogRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+@Service
+@SuppressWarnings("deprecation")
+public class CatalogService<T> {
+
+	@Autowired
+	private ProductCatalogRepository productCatalogRepository;
+	
+	
+	@Value("${catalog.page.size:10}")
+	private int configuredPageSize;
+
+	@SuppressWarnings("unchecked")
+	public ResponseEntity<T> getDetails(String query, int pageNumber) {
+		
+		Page<ProductCatalog> result = productCatalogRepository.findByProductName(query, PageRequest.of(pageNumber, configuredPageSize));
+		List<ProductCatalogDto> resultList = result.stream().map(a -> new ProductCatalogDto(a.getProductId(), a.getProductName(), a.getProductDescription(), a.getPrice(), a.getOldPrice())).collect(Collectors.toList());
+		ProductCatalogDtoList productCatalogDtoList = new ProductCatalogDtoList(resultList, pageNumber, result.getTotalPages());
+		return (ResponseEntity<T>) new ResponseEntity<>(productCatalogDtoList, HttpStatus.OK);
+	}
+
+	public ResponseEntity<T> addDetails(Map<String, Object> requestBody) {
+		try {
+			ProductCatalog productCatalogEntity = (new ObjectMapper()).convertValue(requestBody, ProductCatalog.class);
+			productCatalogRepository.save(productCatalogEntity);
+			return null;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return null;
+		} finally {
+			
+		}
+	}
+
+	public ResponseEntity<T> updateDetails(Map<String, Object> requestBody) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResponseEntity<T> deleteDetails(Map<String, Object> requestBody) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

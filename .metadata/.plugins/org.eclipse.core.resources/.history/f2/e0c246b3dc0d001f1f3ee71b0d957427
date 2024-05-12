@@ -1,0 +1,12 @@
+package com.assignment.catalogservice.repository;
+
+import java.math.BigInteger;
+
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+
+import com.assignment.catalogservice.entity.ProductCatalog;
+
+public interface ProductCatalogRepository extends ElasticsearchRepository<ProductCatalog, BigInteger>{
+
+	
+}

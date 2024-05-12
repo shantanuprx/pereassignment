@@ -1,0 +1,5 @@
+package com.assignment.catalogservice.entity;
+
+public class ProductCatalog {
+
+}

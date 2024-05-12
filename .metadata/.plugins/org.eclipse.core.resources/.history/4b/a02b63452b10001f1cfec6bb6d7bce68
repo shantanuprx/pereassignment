@@ -1,0 +1,5 @@
+package com.assignment.productservice.controller;
+
+public class GlobalExceptionController {
+
+}

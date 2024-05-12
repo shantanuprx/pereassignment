@@ -1,0 +1,5 @@
+package com.assignment.userservice.constants;
+
+public class AddressConstants {
+
+}

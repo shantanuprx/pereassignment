@@ -1,0 +1,28 @@
+package com.assignment.productservice.adapters;
+
+import com.assignment.productservice.constants.ProductsConstants;
+import com.assignment.productservice.dto.ProductDto;
+import com.assignment.productservice.entity.Product;
+
+public class ProductAdapter {
+
+	private ProductAdapter() {
+
+	}
+
+	public static Product convertModelToEntityForInsertion(ProductDto model) {
+		Product productEntity = new Product();
+		productEntity.setCurrentStock(model.getCurrentStock());
+		productEntity.setPrice(model.getPrice());
+		productEntity.setProductDescription(model.getProductDescription());
+		productEntity.setSeller(model.getSeller());
+		productEntity.setSellerAddress(model.getSellerAddress());
+		productEntity.setStatus(ProductsConstants.ACTIVE_FLAG);
+		return productEntity;
+	}
+
+	public static void mapModelValuesToEntityForUpdate(ProductDto request, Product product) {
+		// TODO Auto-generated method stub
+		
+	}
+}

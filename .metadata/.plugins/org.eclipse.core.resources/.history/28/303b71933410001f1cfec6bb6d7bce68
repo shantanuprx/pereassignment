@@ -1,0 +1,34 @@
+package com.assignment.gatewayservice.feignclients;
+
+import java.math.BigInteger;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.assignment.productservice.dto.ProductDto;
+import com.assignment.productservice.dto.ProductUpdateDto;
+
+import jakarta.validation.Valid;
+
+@FeignClient("productservice")
+public interface ProductServiceFeignClient<T> {
+
+	@GetMapping("/product/fetch")
+	public ResponseEntity<T> getDetailsOfProduct(@RequestParam BigInteger productId);
+		
+	@PostMapping("/product/add")
+	public ResponseEntity<T> addProduct(@Valid @RequestBody ProductDto request, @RequestHeader String loggedInUser);
+
+	@PutMapping("/product/update")
+	public ResponseEntity<T> updateProduct(@Valid @RequestBody ProductUpdateDto request, @RequestHeader String loggedInUser);
+	
+	@DeleteMapping("/product/delete")
+	public ResponseEntity<T> deleteProduct(@RequestParam BigInteger productId, @RequestHeader String loggedInUser);
+}

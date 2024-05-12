@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;catalogservice&apos;&#x0D;&#x0A;- Original project: &apos;configurationserver&apos;&#x0D;&#x0A;- Destination element: &apos;catalogservice&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     deployment.yml&#x0D;&#x0A;     deploy.bat&#x0D;&#x0A;     Dockerfile" description="Copy files" element1="deployment.yml" element2="deploy.bat" element3="Dockerfile" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1715490133871" target="/catalogservice" units="0" version="1.0"/>
+</session>

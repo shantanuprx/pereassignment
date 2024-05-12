@@ -1,0 +1,25 @@
+package com.assignment.gatewayservice.entity;
+
+import java.io.Serializable;
+
+import org.springframework.data.redis.core.RedisHash;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@RedisHash("User")
+@Getter
+@Setter
+public class RedisUserEntity implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5736743804739748405L;
+	
+	private String jwtToken;
+
+	private int userId;
+	
+	private String role;
+}

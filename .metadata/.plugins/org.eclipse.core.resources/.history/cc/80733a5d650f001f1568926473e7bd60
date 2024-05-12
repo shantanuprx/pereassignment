@@ -1,0 +1,85 @@
+package com.assignment.userservice.service;
+
+import java.util.Map;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.assignment.productservice.adapters.ProductAdapter;
+import com.assignment.productservice.constants.ProductsConstants;
+import com.assignment.productservice.dto.ProductDto;
+import com.assignment.productservice.entity.Product;
+import com.assignment.userservice.adapters.CardDetailsAdapter;
+import com.assignment.userservice.constants.PaymentConstants;
+import com.assignment.userservice.dto.CardDetailsDto;
+import com.assignment.userservice.dto.ErrorDto;
+import com.assignment.userservice.dto.ResponseDto;
+import com.assignment.userservice.entity.CardDetails;
+import com.assignment.userservice.repository.CardDetailsRepository;
+import com.assignment.userservice.util.ResponseUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.extern.slf4j.Slf4j;
+
+@SuppressWarnings("unchecked")
+@Service("card")
+@Slf4j
+public class CardDetailService<T> extends PaymentOperationService<T>{
+
+	@Autowired
+	private CardDetailsRepository cardDetailsRepository;
+	
+	@Autowired
+	private ResponseUtil<T> responseUtil;
+	
+	@Override
+	public ResponseEntity<T> getDetails(Map<String, Object> requestData) {
+		log.info("Entering getDetails Method at {} ", System.currentTimeMillis());
+		try {
+			
+			CardDetailsDto cardDetailsDto = new ObjectMapper().convertValue(requestData, CardDetailsDto.class);
+			Optional<CardDetails> productEntityOptional = cardDetailsRepository.findByRecordIdAndUserId(cardDetailsDto.get, 0)
+			if (productEntityOptional.isEmpty()) {
+				return responseUtil.prepareResponse(
+						(T) new ResponseDto(HttpStatus.BAD_REQUEST, PaymentConstants.INVALID_PRODUCT_ID),
+						HttpStatus.BAD_REQUEST);
+			}
+			CardDetails productEntity = productEntityOptional.get();
+			CardDetailsDto productDto = CardDetailsAdapter.convertEntityToModel(productEntity);
+			log.info("Product {} successfully fetched ", productEntity.getRecordId());
+			return responseUtil.prepareResponse((T) productDto, HttpStatus.OK);
+		} catch (Exception ex) {
+			log.error("Exception occurred while fetching product details with exception ", ex);
+			return responseUtil
+					.prepareResponse(
+							(T) new ErrorDto(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(),
+									ex.getLocalizedMessage(), System.currentTimeMillis()),
+							HttpStatus.INTERNAL_SERVER_ERROR);
+		} finally {
+			log.info("Exiting getDetails method at  {} ", System.currentTimeMillis());
+		}
+	}
+
+	@Override
+	public ResponseEntity<T> addDetails(Map<String, Object> requestData) {
+		// TODO Auto-generated method stub
+		return super.addDetails(requestData);
+	}
+
+	@Override
+	public ResponseEntity<T> updateDetails(Map<String, Object> requestData) {
+		// TODO Auto-generated method stub
+		return super.updateDetails(requestData);
+	}
+
+	@Override
+	public ResponseEntity<T> deleteDetails(Map<String, Object> requestData) {
+		// TODO Auto-generated method stub
+		return super.deleteDetails(requestData);
+	}
+
+	
+}

@@ -1,0 +1,13 @@
+package com.assignment.productservice.service;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class SearchServiceImpl<T> {
+
+	public ResponseEntity<T> searchProducts(String searchQuery){
+		
+		return null;
+	}
+}

@@ -1,0 +1,7 @@
+package com.assignment.orderservice.constants;
+
+public class OrdersConstant {
+
+	public static final String INVALID_PRODUCT_ID = null;
+
+}

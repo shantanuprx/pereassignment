@@ -1,0 +1,5 @@
+package com.assignment.userservice.controller;
+
+public class AppController {
+
+}

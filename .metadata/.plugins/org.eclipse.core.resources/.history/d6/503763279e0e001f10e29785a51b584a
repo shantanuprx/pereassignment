@@ -1,0 +1,5 @@
+package com.assignment.gatewayservice.constants;
+
+public class GatewayServiceConstants {
+
+}

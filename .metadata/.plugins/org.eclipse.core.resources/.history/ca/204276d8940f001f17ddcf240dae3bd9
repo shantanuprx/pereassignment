@@ -1,0 +1,5 @@
+package com.assignment.orderservice.constants;
+
+public class OrdersConstant {
+
+}

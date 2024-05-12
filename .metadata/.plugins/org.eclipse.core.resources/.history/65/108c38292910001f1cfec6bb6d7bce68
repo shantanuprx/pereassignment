@@ -1,0 +1,9 @@
+mvn clean install -Dmaven.test.skip=true
+
+docker build . -t gryffindor937/gatewayservicedeployment:1.0 
+
+docker push gryffindor937/catalogservicedeployment:1.0 
+
+kubectl delete deployment catalogservicedeployment
+
+kubectl apply -f deployment.yml 

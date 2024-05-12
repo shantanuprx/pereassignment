@@ -1,0 +1,50 @@
+package com.assignment.gatewayservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.assignment.gatewayservice.adapter.UserServicesAdapter;
+import com.assignment.gatewayservice.constants.GatewayServiceConstants;
+import com.assignment.gatewayservice.dto.RegistrationDto;
+import com.assignment.gatewayservice.dto.ResponseDto;
+import com.assignment.gatewayservice.entity.User;
+import com.assignment.gatewayservice.repository.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
+
+@SuppressWarnings("unchecked")
+@Service
+@Slf4j
+public class AuthorizationService<T> {
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Autowired
+	private AuthTokenService authTokenService;
+
+	public ResponseEntity<T> createNewUser(RegistrationDto registrationDto) {
+		log.info("Entering createNewUser method at  {} ", System.currentTimeMillis());
+		try {
+			User userEntity = UserServicesAdapter.convertModelToEntity(registrationDto);
+			userRepository.save(userEntity);
+			return ResponseEntity.status(HttpStatus.CREATED)
+					.body((T) new ResponseDto(HttpStatus.CREATED, GatewayServiceConstants.RECORD_CREATION_MESSAGE));
+		} catch (Exception ex) {
+			return null;
+		} finally {
+			log.info("Exiting createNewUser method at  {} ", System.currentTimeMillis());
+		}
+
+	}
+
+	public String generateToken(String username) {
+		return authTokenService.generateToken(username);
+	}
+
+	public void validateToken(String token) {
+		authTokenService.validateToken(token);
+	}
+}

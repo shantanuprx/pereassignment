@@ -1,0 +1,25 @@
+package com.assignment.gatewayservice.adapter;
+
+import java.security.NoSuchAlgorithmException;
+
+import com.assignment.gatewayservice.dto.RegistrationDto;
+import com.assignment.gatewayservice.entity.User;
+import com.assignment.gatewayservice.util.HashUtil;
+
+public class UserServicesAdapter {
+
+	public User convertModelToEntity(RegistrationDto registrationDto) throws NoSuchAlgorithmException {
+		User entity = new User();
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setMidName(registrationDto.getMidName());
+		entity.setLastName(registrationDto.getLastName());
+		entity.setEmail(registrationDto.getEmailId());
+		entity.setPassword(HashUtil.generateMd5Hash(registrationDto.getPassword()));
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setFirstName(registrationDto.getFirstName());
+		return entity;
+	}
+
+}

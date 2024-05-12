@@ -1,0 +1,8 @@
+package com.assignment.userservice.constants;
+
+public class PaymentConstants {
+
+	public static final String PAYMENT_TYPE = "paymentType";
+	public static final String INVALID_PRODUCT_ID = null;
+
+}

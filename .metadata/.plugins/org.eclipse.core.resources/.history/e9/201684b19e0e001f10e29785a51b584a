@@ -1,0 +1,23 @@
+package com.assignment.gatewayservice.adapter;
+
+import com.assignment.gatewayservice.dto.RegistrationDto;
+import com.assignment.gatewayservice.entity.User;
+
+public class UserServicesAdapter {
+
+	public User convertModelToEntity(RegistrationDto registrationDto) {
+		User entity = new User();
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setMidName(registrationDto.getMidName());
+		entity.setLastName(registrationDto.getLastName());
+		entity.setEmail(registrationDto.getEmailId());
+		entity.setPassword();
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setFirstName(registrationDto.getFirstName());
+		entity.setFirstName(registrationDto.getFirstName());
+		
+		return entity;
+	}
+	
+}

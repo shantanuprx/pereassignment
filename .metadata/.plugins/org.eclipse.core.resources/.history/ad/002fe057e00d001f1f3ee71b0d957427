@@ -1,0 +1,12 @@
+package com.assignment.catalogservice.repository;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+
+import com.assignment.catalogservice.entity.ProductCatalog;
+
+public interface ProductCatalogRepository extends ElasticsearchRepository<ProductCatalog, Long>{
+
+	public Page<ProductCatalog> findByProductName(String name, Pageable pageable);
+}

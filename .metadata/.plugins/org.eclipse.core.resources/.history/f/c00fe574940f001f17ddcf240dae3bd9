@@ -1,0 +1,36 @@
+package com.assignment.orderservice.service;
+
+import java.math.BigInteger;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.assignment.orderservice.dto.OrderDto;
+
+import jakarta.validation.Valid;
+
+@Service
+public class OrderOperationService<T> {
+
+	public ResponseEntity<T> updateOrder(@Valid OrderDto request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResponseEntity<T> createOrder(@Valid OrderDto request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResponseEntity<T> getDetails(Map<String, Object> requestMap) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public ResponseEntity<T> getDetails(BigInteger orderId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

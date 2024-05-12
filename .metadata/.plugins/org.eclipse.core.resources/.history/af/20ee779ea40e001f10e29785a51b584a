@@ -1,0 +1,14 @@
+package com.assignment.gatewayservice.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.assignment.gatewayservice.entity.User;
+import com.assignment.gatewayservice.entity.UserCredential;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+	
+	Optional<UserCredential> findByEmail(String email);
+
+}

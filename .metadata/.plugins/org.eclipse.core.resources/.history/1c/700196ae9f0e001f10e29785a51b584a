@@ -1,0 +1,31 @@
+package com.assignment.gatewayservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.assignment.gatewayservice.adapter.UserServicesAdapter;
+import com.assignment.gatewayservice.dto.RegistrationDto;
+import com.assignment.gatewayservice.entity.User;
+import com.assignment.gatewayservice.repository.UserRepository;
+
+@Service
+public class AuthorizationService<T> {
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Autowired
+	private AuthTokenService authTokenService;
+
+	public ResponseEntity<T> createNewUser(RegistrationDto registrationDto) {
+		try {
+			User userEntity = UserServicesAdapter.convertModelToEntity(registrationDto);
+			userRepository.save(userEntity);
+			
+		} catch (Exception ex) {
+			
+		}
+
+	}
+}
