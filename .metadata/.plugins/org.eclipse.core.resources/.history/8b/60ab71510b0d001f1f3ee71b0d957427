@@ -1,6 +1,0 @@
-package com.assignment.productservice.entity;
-
-@Entity
-public class Products {
-
-}

@@ -1,8 +1,0 @@
-package com.assignment.productservice.dto;
-
-public class ResponseDto {
-
-	private String status;
-	
-	private String message;
-}

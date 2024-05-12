@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;hibernate.properties&apos; to &apos;entitybulilder/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;hibernate-tools-maven&apos;&#x0D;&#x0A;- Destination element: &apos;entitybulilder/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;hibernate.properties&apos;" description="Copy file" destination="=entitybulilder/src\/main\/resources=/maven.pomderived=/true=/=/optional=/true=/" element1="src/main/resources/hibernate.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1715156259437" units="0" version="1.0"/>
-</session>

@@ -1,4 +1,0 @@
-spring.application.name=catalogservice
-server.servlet.context-path=catalog
-
-elasticsearch.node.url=localhost:9200

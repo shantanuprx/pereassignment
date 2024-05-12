@@ -1,7 +1,0 @@
-package com.assignment.userservice.constants;
-
-public class AddressConstants {
-
-	public static final String INVALID_RECORD_REQUEST = "INVALID RECORD REQUEST";
-
-}

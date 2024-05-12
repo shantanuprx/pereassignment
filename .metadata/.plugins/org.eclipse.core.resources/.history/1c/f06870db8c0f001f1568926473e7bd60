@@ -1,3 +1,0 @@
-spring.application.name=feignclient
-server.port=8099
-#eureka.client.service-url.defaultZone=http://dsservicelb.default.svc.cluster.local:8761/eureka

@@ -1,4 +1,0 @@
-spring.application.name=configurationserver
-spring.profiles.active=native
-server.servlet.context-path=/config
-spring.cloud.config.server.native.search-locations="[classpath:/]"

@@ -1,9 +1,0 @@
-package com.assignment.gatewayservice.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.assignment.gatewayservice.entity.User;
-
-public interface UserRepository extends JpaRepository<User, Integer> {
-
-}

@@ -1,5 +1,0 @@
-package com.assignment.gatewayservice.feignclients;
-
-public interface BaseFeignClient<T> {
-
-}

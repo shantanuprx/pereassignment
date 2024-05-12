@@ -1,7 +1,0 @@
-package com.assignment.userservice.constants;
-
-public class PaymentConstants {
-
-	public static final Object PAYMENT_TYPE = "paymentType";
-
-}

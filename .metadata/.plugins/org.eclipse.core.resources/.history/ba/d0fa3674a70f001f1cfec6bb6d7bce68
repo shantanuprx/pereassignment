@@ -1,9 +1,0 @@
-package com.assignment.userservice.repository;
-
-jpa.repository.JpaRepository;
-
-import com.assignment.userservice.entity.UserProfile;
-
-public interface UserProfileRepository extends JpaRepository<UserProfile, Integer>{
-
-}
